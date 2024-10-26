@@ -3,6 +3,10 @@ eval $(ssh-agent -s)
 
 alias T-Reload='source ~/.bashrc'
 alias Go-Serfiwr='ssh aj@192.168.0.67'
+alias Get-IP-Pub='curl -s http://tnx.nl/ip | tr -d "<>"'
+alias Get-IP-Prv='ip addr | grep inet'
+alias Get-IPs='echo "public: " && Get-IP-Pub && echo "private \n" && Get-IP-Prv'
+alias T-Edit='nano ~/.bashrc'
 
 
 function G-Fetch () {
