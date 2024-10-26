@@ -1,10 +1,35 @@
 eval $(ssh-agent -s)
 
+# The following lines were added by compinstall
 
-alias T-Reload='source ~/.bashrc'
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' ''
+zstyle :compinstall filename '/home/aj/.zshrc'
+
+autoload -Uz compinit
+compinit
+autoload -Uz promptinit
+promptinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=20000
+setopt extendedglob
+unsetopt autocd
+bindkey -e
+# End of lines configured by zsh-newuser-install
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias Go-Serfiwr='ssh aj@192.168.0.67'
+alias T-Reload='source ~/.zshrc'
+
+NEWLINE=$'\n'
+PROMPT="%B%F{14}[%f%b%B%F{219}%n%f%b %F{14}@%f %B%F{82}%m%f%b%F{14}]%f${NEWLINE}%F{82}%d%f%F{14} > %f"
 
 
+#AJ's git funcs
 function G-Fetch () {
     git fetch
     git status
