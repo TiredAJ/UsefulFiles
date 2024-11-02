@@ -34,7 +34,11 @@ bindkey "^[[3;5~" kill-word
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias Go-Serfiwr='ssh aj@192.168.0.67'
+alias Get-IP-Pub='curl -s http://tnx.nl/ip | tr -d "<>"'
+alias Get-IP-Prv='ip addr | grep inet'
+alias Get-IPs='echo "public: " && Get-IP-Pub && echo "private \n" && Get-IP-Prv'
 alias T-Reload='source ~/.zshrc'
+alias T-Edit='kate ~/.bashrc'
 
 NEWLINE=$'\n'
 PROMPT="%B%F{14}[%f%b%B%F{219}%n%f%b %F{14}@%f %B%F{82}%m%f%b%F{14}]%f${NEWLINE}%F{82}%d%f%F{14} > %f"
