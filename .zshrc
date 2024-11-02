@@ -20,6 +20,17 @@ unsetopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+
+#keys
+bindkey "^[OH" beginning-of-line
+bindkey "^[OF" end-of-line
+bindkey "^[[3~" delete-char
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^H" backward-kill-word
+bindkey "^[[3;5~" kill-word
+
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias Go-Serfiwr='ssh aj@192.168.0.67'
